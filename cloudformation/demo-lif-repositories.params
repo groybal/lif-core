@@ -8,7 +8,11 @@
     "ParameterValue": "demo-lif-configs"
   },
   {
-    "ParameterKey": "AccessKeySerial",
-    "ParameterValue": "1"
+    "ParameterKey": "GitHubRepos",
+    "ParameterValue": "repo:LIF-Initiative/lif-core:*"
+  },
+  {
+    "ParameterKey": "ExistingProviderArn",
+    "ParameterValue": "arn:aws:iam::381492161417:oidc-provider/token.actions.githubusercontent.com"
   }
 ]
