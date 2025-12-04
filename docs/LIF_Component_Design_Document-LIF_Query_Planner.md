@@ -128,7 +128,7 @@ A sample *LIF query result* may be represented with following JSON:
 						"identifierType": "SCHOOL_ASSIGNED_NUMBER"
 					}
 				],
-				...
+				// ...other person properties
 			}
 		]
 	}
@@ -151,7 +151,7 @@ The **Query Planner** will follow the steps below in accordance with its role in
 
 4.  If additional data is required, the **Query Planner** then queries the ~~**Identity Mapper** and **MDR**~~ information sources configuration to get necessary information about source data systems that may be storing the relevant learner information. ~~While the **Identity Mapper** provides information about the source organizations required to get the data for the specific learner(s) in question, the **MDR** provides source data models and mappings for appropriately fetching the data from the source data systems.~~
 
-5.  The **Query Planner** then invokes the **Orchestrator** to spin up required data pipelines to fetch the additional data required based on findings from the ~~**Identity Mapper** and **MDR**~~ information sources configuration. The **Orchestrator** returns *LIF query* *result.*
+5.  The **Query Planner** then invokes the **Orchestrator** to spin up required data pipelines to fetch the additional data required based on findings from the ~~**Identity Mapper** and **MDR**~~ information sources configuration. The **Orchestrator** returns the *LIF query* *result*.
 
 6.  The **Query Planner** uses the *LIF query result* to update the existing list of *LIF records,* making them "complete" by having answered the *LIF query*. It is important to note that even if no data is returned from the data pipelines, the absence of information still "completes" this instance of composing a *LIF record.*
 
