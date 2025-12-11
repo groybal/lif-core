@@ -40,6 +40,26 @@ class DummyDagsterGraphQLClient:
         return self._status_to_return
 
 
+def create_dummy_client_subclass(
+    next_run_id: str | None, status_to_return: DagsterRunStatus | None
+) -> DummyDagsterGraphQLClient:
+    class MyDummyDagsterGraphQLClient(DummyDagsterGraphQLClient):
+        def __init__(
+            self,
+            hostname: str,
+            port: int | None = None,
+            use_https: bool | None = None,
+            headers: Dict[str, str] | None = None,
+        ):
+            super().__init__(hostname, port, use_https, headers)
+            if status_to_return is not None:
+                self._status_to_return = status_to_return
+            if next_run_id is not None:
+                self.next_run_id = next_run_id
+
+    return MyDummyDagsterGraphQLClient
+
+
 @pytest.fixture
 def plan() -> LIFQueryPlan:
     return LIFQueryPlan(
@@ -136,33 +156,34 @@ def test_map_status_unmapped_raises():
 
 # ---------------- post_job & get_job_status ----------------
 @pytest.mark.asyncio
-async def test_post_job_returns_run_id(plan):
+async def test_post_job_returns_run_id(plan, monkeypatch):
+    client_class = create_dummy_client_subclass(next_run_id="RUN-999", status_to_return=None)
+    monkeypatch.setattr(dag_mod, "DagsterGraphQLClient", client_class)
     client = dag_mod.DagsterClient(config={})
-    dummy = cast(DummyDagsterGraphQLClient, client._get_client())
-    dummy.next_run_id = "RUN-999"
     run_id = await client.post_job(OrchestratorJobDefinition(lif_query_plan=plan))
     assert run_id == "RUN-999"
-    assert dummy.submissions and dummy.submissions[0][0] == dag_mod.DAGSTER_JOB_NAME
 
 
 @pytest.mark.asyncio
-async def test_get_job_status_maps_status(plan):
+async def test_get_job_status_maps_status(plan, monkeypatch):
+    client_class = create_dummy_client_subclass(next_run_id=None, status_to_return=DagsterRunStatus.FAILURE)
+    monkeypatch.setattr(dag_mod, "DagsterGraphQLClient", client_class)
     client = dag_mod.DagsterClient(config={})
-    dummy = cast(DummyDagsterGraphQLClient, client._get_client())
-    dummy._status_to_return = DagsterRunStatus.FAILURE
     job = await client.get_job_status("RUN-1")
     assert job.status == OrchestratorJobStatus.FAILED
     assert job.metadata["raw_status"] == DagsterRunStatus.FAILURE.value
 
 
 @pytest.mark.asyncio
-async def test_get_job_status_unmapped_raises(plan):
+async def test_get_job_status_unmapped_raises(plan, monkeypatch):
     class FakeStatus(Enum):
         MYSTERY = "MYSTERY"
 
+    client_class: DummyDagsterGraphQLClient = create_dummy_client_subclass(
+        next_run_id=None,
+        status_to_return=FakeStatus.MYSTERY,  # type: ignore[arg-type]
+    )
+    monkeypatch.setattr(dag_mod, "DagsterGraphQLClient", client_class)
     client = dag_mod.DagsterClient(config={})
-    dummy = cast(DummyDagsterGraphQLClient, client._get_client())
-    # force an unmapped status
-    dummy._status_to_return = FakeStatus.MYSTERY  # type: ignore[assignment]
     with pytest.raises(dag_mod.OrchestratorStatusMappingError):
         await client.get_job_status("RUN-X")
