@@ -84,10 +84,11 @@
             "informationSourceId": "Org2"
           },
           "refCredentialAward": {
-            "id": "cred-employment-certificate-001",
+            "identifier": "cred-employment-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Sarah Marin",
-            "informationSourceId": "Org2"
+            "informationSourceId": "Org2",
+            "informationSourceOrganization": "Org2"
           }
         },
         {
@@ -123,10 +124,11 @@
             "informationSourceId": "Org2"
           },
           "refCredentialAward": {
-            "id": "cred-employment-certificate-001",
+            "identifier": "cred-employment-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Sarah Marin",
-            "informationSourceId": "Org2"
+            "informationSourceId": "Org2",
+            "informationSourceOrganization": "Org2"
           }
         }
       ],
@@ -199,10 +201,11 @@
       "informationSourceId": "Org2",
       "credentialAward": [
         {
-          "id": "cred-employment-certificate-001",
+          "identifier": "cred-employment-certificate-001",
           "awardIssueDate": "2024-12-15T10:00:00Z",
           "credentialAwardee": "Sarah Marin",
-          "informationSourceId": "Org2"
+          "informationSourceId": "Org2",
+          "informationSourceOrganization": "Org2"
         }
       ]
     }

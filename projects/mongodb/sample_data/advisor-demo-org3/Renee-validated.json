@@ -82,7 +82,8 @@
           },
           "refCredentialAward": {
             "informationSourceId": "Org3",
-            "id": "34024cb4-4a2d-4ed6-ba42-50c65cd688b4",
+            "informationSourceOrganization": "Org3",
+            "identifier": "34024cb4-4a2d-4ed6-ba42-50c65cd688b4",
             "awardIssueDate": "2021-11-15T20:13:56Z",
             "credentialAwardee": "Renee Green"
           }
@@ -91,12 +92,13 @@
       "credentialAward": [
         {
           "informationSourceId": "Org3",
+          "informationSourceOrganization": "Org3",
           "awardStatus": "InProgress",
           "instanceOfRefCredential": {
             "informationSourceId": "Org3",
-            "id": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1"
+            "identifier": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1"
           },
-          "id": "230826f6-7b40-4c79-9589-fb290deea1a3",
+          "identifier": "230826f6-7b40-4c79-9589-fb290deea1a3",
           "awardIssueDate": "2022-07-31T13:14:17Z",
           "credentialAwardee": "Renee Green"
         },
@@ -104,9 +106,9 @@
           "awardStatus": "Completed",
           "instanceOfRefCredential": {
             "informationSourceId": "Org3",
-            "id": ""
+            "identifier": ""
           },
-          "id": "cred-proficiency-certificate-001",
+          "identifier": "cred-proficiency-certificate-001",
           "awardIssueDate": "2024-12-15T10:00:00Z",
           "credentialAwardee": "Renee Green",
           "informationSourceId": "Org3"
@@ -115,10 +117,10 @@
           "awardStatus": "Completed",
           "instanceOfRefCredential": {
             "informationSourceId": "Org3",
-            "id": ""
+            "identifier": ""
           },
           "informationSourceId": "Org3",
-          "id": "34024cb4-4a2d-4ed6-ba42-50c65cd688b4",
+          "identifier": "34024cb4-4a2d-4ed6-ba42-50c65cd688b4",
           "awardIssueDate": "2021-11-15T20:13:56Z",
           "credentialAwardee": "Renee Green"
         }
@@ -129,10 +131,11 @@
           "name": "Applies Elements and Principles of Design",
           "description": "Demonstrates understanding and application of the elements and principles of design in visual compositions.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         },
         {
@@ -140,10 +143,11 @@
           "name": "Utilizes Color Theory",
           "description": "Applies color theory concepts including harmony, contrast, and psychological impact in design work.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         },
         {
@@ -151,10 +155,11 @@
           "name": "Applies Typography Principles",
           "description": "Uses typography effectively by applying principles such as spacing, alignment, readability, and expression.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         },
         {
@@ -162,10 +167,11 @@
           "name": "Creates Layouts for Print and Digital Media",
           "description": "Develops layouts suitable for both print and digital platforms with attention to format constraints and user experience.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         },
         {
@@ -173,10 +179,11 @@
           "name": "Employs Design Thinking Process",
           "description": "Applies the design thinking process to define, ideate, prototype, and test design solutions.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         },
         {
@@ -184,10 +191,11 @@
           "name": "Uses Industry-Standard Design Software",
           "description": "Produces digital assets using industry-standard design tools such as Adobe Photoshop or Illustrator.",
           "refCredentialAward": {
-            "id": "cred-proficiency-certificate-001",
+            "identifier": "cred-proficiency-certificate-001",
             "awardIssueDate": "2024-12-15T10:00:00Z",
             "credentialAwardee": "Renee Green",
-            "informationSourceId": "Org3"
+            "informationSourceId": "Org3",
+            "informationSourceOrganization": "Org3"
           }
         }
       ],
@@ -299,7 +307,7 @@
   "credential": [
     {
       "informationSourceId": "Org3",
-      "id": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1",
+      "identifier": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1",
       "name": "Adobe Certified Associate - Visual Design",
       "format": [
         "Digital Badge",
@@ -329,7 +337,7 @@
     },
     {
       "informationSourceId": "Org3",
-      "id": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1"
+      "identifier": "dbd3c22f-1fd2-4829-b39d-be88d2052ca1"
     }
   ],
   "informationSourceId": "Org3"
