@@ -25,29 +25,31 @@ query GetPersonByIdentifier($identifier: String!, $identifierType: String!) {
       #  name
       #  informationSourceId
       #}
-      assertedByRefOrganization {
-        identificationSystem
-        name
-        organizationType
-        informationSourceId
-      }
-      offeredByRefOrganization {
-        identificationSystem
-        name
-        organizationType
-        informationSourceId
-      }
-      approvedByRefOrganization {
-        identificationSystem
-        name
-        organizationType
-        informationSourceId
-      }
+      #assertedByRefOrganization {
+      #  identificationSystem
+      #  name
+      #  organizationType
+      #  informationSourceId
+      #}
+      #offeredByRefOrganization {
+      #  identificationSystem
+      #  name
+      #  organizationType
+      #  informationSourceId
+      #}
+      #approvedByRefOrganization {
+      #  identificationSystem
+      #  name
+      #  organizationType
+      #  informationSourceId
+      #}
       refCredentialAward {
-        id
-        awardIssueDate
-        credentialAwardee
+        identifier
+        #awardIssueDate
+        #credentialAwardee
         informationSourceId
+        informationSourceOrganization
+        name
       }
     }
     positionPreferences {
@@ -77,17 +79,18 @@ query GetPersonByIdentifier($identifier: String!, $identifierType: String!) {
     }
     employmentPreferences {
     #  informationSourceId
-      offeredByRefOrganization {
-        informationSourceId
-        name
-        identificationSystem
-        organizationType
-      }
+    #  offeredByRefOrganization {
+    #    informationSourceId
+    #    name
+    #    identificationSystem
+    #    organizationType
+    #  }
+      identifier
       organizationTypes
       organizationNames
     }
     credentialAward {
-      id
+      identifier
       awardIssueDate
       credentialAwardee
       informationSourceId

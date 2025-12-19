@@ -214,6 +214,7 @@ services:
     environment:
       LIF_QUERY_CACHE_URL: http://lif-query-cache-org2:8001
       LIF_QUERY_PLANNER_INFORMATION_SOURCES_CONFIG_PATH: ${LIF_QUERY_PLANNER_INFORMATION_SOURCES_CONFIG_PATH:-/opt/app/information_sources_config.yml}
+      LIF_QUERY_TIMEOUT_SECONDS: ${LIF_QUERY_TIMEOUT_SECONDS:-120}
     depends_on:
       - lif-query-cache-org2
     volumes:
@@ -227,6 +228,7 @@ services:
     environment:
       LIF_QUERY_CACHE_URL: http://lif-query-cache-org3:8001
       LIF_QUERY_PLANNER_INFORMATION_SOURCES_CONFIG_PATH: ${LIF_QUERY_PLANNER_INFORMATION_SOURCES_CONFIG_PATH:-/opt/app/information_sources_config.yml}
+      LIF_QUERY_TIMEOUT_SECONDS: ${LIF_QUERY_TIMEOUT_SECONDS:-120}
     depends_on:
       - lif-query-cache-org3
     volumes:
